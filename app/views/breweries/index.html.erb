@@ -1,5 +1,7 @@
 <h1>Listing breweries</h1>
 
+<p> Number of breweries: <%= @breweries.count %> </p>
+
 <table>
   <tr>
     <th>Name</th>
@@ -11,9 +13,8 @@
 
 <% @breweries.each do |brewery| %>
   <tr>
-    <td><%= brewery.name %></td>
+    <td><%= link_to brewery.name, brewery %></td>
     <td><%= brewery.year %></td>
-    <td><%= link_to 'Show', brewery %></td>
     <td><%= link_to 'Edit', edit_brewery_path(brewery) %></td>
     <td><%= link_to 'Destroy', brewery, method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
