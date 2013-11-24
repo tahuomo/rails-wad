@@ -45,3 +45,4 @@ gem 'jquery-rails'
 # gem 'debugger'
 
 gem 'debugger', :group => :development
+gem 'bcrypt-ruby', '~> 3.0.0'
