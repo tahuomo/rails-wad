@@ -1,11 +1,15 @@
 language: ruby
-bundler_args: --without development
-
 rvm:
- - 1.9.3
-
+- 1.9.3
 script:
- - bundle exec rake db:migrate --trace
- - RAILS_ENV=test bundle exec rake db:migrate --trace
- - bundle exec rake db:test:prepare
- - bundle exec rspec -f d spec/
+- bundle exec rake db:migrate --trace
+- RAILS_ENV=test bundle exec rake db:migrate --trace
+- bundle exec rake db:test:prepare
+- bundle exec rspec -f d spec/
+deploy:
+  provider: heroku
+  api_key:
+    secure: glnO8rsaWNiIcUJ0DSEjfaWI0T4X4qb+Kj5AKXqpboMoOC1rGhgRp9pRfdDkMwhWysmT/e7re3mI3dd1+3dKfA0cybWabpgzmToCvPaWgKslVbgmt30IsszHkkknH0MBJSbzy396YUvM1NaYCXKCbFpdyhrs3TJwWKlY/5e7hJg=
+  app: serene-dusk-6292
+  on:
+    repo: tahuomo/rails-wad
