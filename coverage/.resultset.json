@@ -201,12 +201,16 @@
         1,
         null,
         1,
-        54,
-        50,
+        78,
+        58,
         null,
         null,
         1,
         20,
+        null,
+        null,
+        1,
+        5,
         null,
         null
       ],
@@ -231,6 +235,7 @@
         null
       ],
       "/home/saasbook/beerbeer/ratebeer/app/controllers/beer_clubs_controller.rb": [
+        1,
         1,
         null,
         null,
@@ -329,6 +334,7 @@
       ],
       "/home/saasbook/beerbeer/ratebeer/app/controllers/beers_controller.rb": [
         1,
+        1,
         null,
         null,
         1,
@@ -366,6 +372,8 @@
         null,
         null,
         1,
+        0,
+        0,
         0,
         null,
         null,
@@ -436,6 +444,7 @@
         null
       ],
       "/home/saasbook/beerbeer/ratebeer/app/controllers/breweries_controller.rb": [
+        1,
         1,
         1,
         null,
@@ -557,6 +566,8 @@
       "/home/saasbook/beerbeer/ratebeer/app/controllers/memberships_controller.rb": [
         1,
         1,
+        null,
+        1,
         0,
         0,
         null,
@@ -587,6 +598,7 @@
         null
       ],
       "/home/saasbook/beerbeer/ratebeer/app/controllers/ratings_controller.rb": [
+        1,
         1,
         1,
         1,
@@ -1257,6 +1269,6 @@
         null
       ]
     },
-    "timestamp": 1386416296
+    "timestamp": 1386421059
   }
 }

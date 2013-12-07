@@ -1,4 +1,6 @@
 class MembershipsController  < ApplicationController
+       before_filter :ensure_that_signed_in, :except => [:index, :show]
+
        def new
           @beer_clubs = BeerClub.all
           @membership = Membership.new

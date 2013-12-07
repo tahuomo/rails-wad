@@ -1,4 +1,5 @@
 class BeersController < ApplicationController
+  before_filter :ensure_that_signed_in, :except => [:index, :show]
   # GET /beers
   # GET /beers.json
   def index
@@ -37,6 +38,8 @@ class BeersController < ApplicationController
   # GET /beers/1/edit
   def edit
     @beer = Beer.find(params[:id])
+    @breweries = Brewery.all
+    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
   end
 
   # POST /beers
