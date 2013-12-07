@@ -13,3 +13,4 @@ deploy:
   app: serene-dusk-6292
   on:
     repo: tahuomo/rails-wad
+  run: "rake db:migrate"
