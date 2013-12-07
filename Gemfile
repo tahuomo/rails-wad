@@ -9,6 +9,17 @@ group :development, :test do
   gem 'sqlite3'
 end
 
+group :development, :test do
+  gem 'rspec-rails', '~> 2.0'
+end
+
+group :test do
+  gem 'factory_girl_rails'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'simplecov', :require => false
+end
+
 group :production do
    gem 'pg'
    gem 'rails_stdout_logging' 

@@ -23,6 +23,8 @@
           </li>
       <% end %>
     </ul>
+    <p>favorite brewery is <%= @user.favorite_brewery.name %><br />
+    favorite style is <%= @user.favorite_style %></p>
 <% end %>
 
 <% if not @user.memberships.empty? %>

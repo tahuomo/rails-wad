@@ -18,4 +18,32 @@ class User < ActiveRecord::Base
   def to_s
     "#{username}"
   end
+
+  def favorite_beer
+    return nil if ratings.empty?   # palautetaan nil jos reittauksia ei ole
+
+    ratings.sort_by{ |r| r.score }.last.beer
+  end
+
+  def favorite_style
+    return calculate_best_average_from :style
+  end
+
+  def favorite_brewery
+    return calculate_best_average_from :brewery
+  end
+
+  private
+
+  def calculate_best_average_from feature
+    return nil if ratings.empty?
+    hash = ratings.group_by{|r| r.beer.send(feature)}
+    hash.keys.each do |key|
+      sum = 0;
+      hash[key].each {|a| sum += a.score}
+      hash[key] = sum / hash[key].count
+    end
+    return hash.key(hash.values.max)
+  end
+
 end
