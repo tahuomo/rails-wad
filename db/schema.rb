@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131207130253) do
+ActiveRecord::Schema.define(:version => 20131209180537) do
 
   create_table "beer_clubs", :force => true do |t|
     t.string   "name"
@@ -50,6 +50,17 @@ ActiveRecord::Schema.define(:version => 20131207130253) do
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
   end
+
+  create_table "settings", :force => true do |t|
+    t.string   "var",                      :null => false
+    t.text     "value"
+    t.integer  "thing_id"
+    t.string   "thing_type", :limit => 30
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
+  end
+
+  add_index "settings", ["thing_type", "thing_id", "var"], :name => "index_settings_on_thing_type_and_thing_id_and_var", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "username"

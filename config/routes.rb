@@ -1,7 +1,9 @@
 Ratebeer::Application.routes.draw do
 
 
-
+  #Beer Mapping
+  get 'places' => 'places#index'
+  post 'places' => 'places#search'
 
   # Pääsivu
   root :to => 'breweries#index'
