@@ -13,7 +13,7 @@ describe "Places" do
 
   it "if multiple returned by the API, all are shown on the same page" do
     BeermappingAPI.stub(:places_in).with("kumpula").and_return([Place.new(:name => "Oljenkorsi"),
-                                                                Place.new(:name => "Hilpeä hauki"),
+                                                                Place.new(:name => "Hilpea hauki"),
                                                                 Place.new(:name => "Llamas")] )
 
     visit places_path
@@ -21,7 +21,7 @@ describe "Places" do
     click_button "Search"
 
     expect(page).to have_content "Oljenkorsi"
-    expect(page).to have_content "Hilpeä hauki"
+    expect(page).to have_content "Hilpea hauki"
     expect(page).to have_content "Llamas"
   end
 

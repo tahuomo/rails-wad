@@ -862,6 +862,11 @@
         null,
         null
       ],
+      "/home/saasbook/beerbeer/ratebeer/app/models/settings.rb": [
+        1,
+        1,
+        null
+      ],
       "/home/saasbook/beerbeer/ratebeer/spec/factories.rb": [
         1,
         1,
@@ -1350,6 +1355,18 @@
         1,
         1,
         0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
         null,
         0,
         0,
@@ -1368,6 +1385,6 @@
         null
       ]
     },
-    "timestamp": 1386611162
+    "timestamp": 1386613051
   }
 }
