@@ -15,6 +15,8 @@ class BeersController < ApplicationController
   # GET /beers/1.json
   def show
     @beer = Beer.find(params[:id])
+    @rating = Rating.new
+    @rating.beer = @beer
 
     respond_to do |format|
       format.html # show.html.erb

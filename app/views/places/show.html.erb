@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @place.name %>
+</h1>
+
+<p>
+  <%= @place.street %> <br />
+  <%= @place.zip %> <%= @place.city %>
+</p>
+
+<p></p><iframe src="<%= @place.blogmap %>" height="400" width="400"></iframe></p>
+
+<p>
+  Scores:<br />
+  <% Place.score_fields.each do |field| %>
+    <%=field %>: <%= @place.send(field)  %><br />
+  <% end %>
+</p>

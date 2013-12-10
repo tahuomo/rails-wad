@@ -2,7 +2,7 @@ Ratebeer::Application.routes.draw do
 
 
   #Beer Mapping
-  get 'places' => 'places#index'
+  resources :places, :only => [:index, :show]
   post 'places' => 'places#search'
 
   # Pääsivu
