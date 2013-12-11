@@ -1,6 +1,9 @@
 Ratebeer::Application.routes.draw do
 
 
+  resources :styles
+
+
   #Beer Mapping
   resources :places, :only => [:index, :show]
   post 'places' => 'places#search'

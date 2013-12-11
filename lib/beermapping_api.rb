@@ -31,8 +31,12 @@ class BeermappingAPI
     url = "http://beermapping.com/webservice/loccity/#{key}/"
 
     response = HTTParty.get "#{url}#{city.gsub(' ', '%20')}"
-    places = parse(response)
+    places = response.parsed_response["bmp_locations"]["location"]
 
+    return [] if places.is_a?(Hash) and places['id'].nil?
+
+    places = [places] if places.is_a?(Hash)
+    return places
     places.inject([]) do | set, place |
       set << Place.new(place)
     end
@@ -41,22 +45,13 @@ class BeermappingAPI
   def self.fetch_place_by_id(id)
     url = "http://beermapping.com/webservice/locquery/#{key}/"
     response = HTTParty.get "#{url}#{id}"
-    places = parse(response)
-
-    return Place.new(places.first.merge find_scores_by_id(id))
-  end
-
-  def self.parse(httpresponse)
-    places = httpresponse.parsed_response["bmp_locations"]["location"]
+    places = response.parsed_response["bmp_locations"]["location"]
 
     return nil if places.is_a?(Hash) and places['id'].nil?
 
     places = [places] if places.is_a?(Hash)
-    return places
-
+    return Place.new(places.first.merge find_scores_by_id(id))
   end
-
-
 
   def self.key
     Settings.beermapping_apikey
