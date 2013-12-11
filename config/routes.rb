@@ -27,6 +27,7 @@ Ratebeer::Application.routes.draw do
   resources :beer_clubs
   resources :ratings, :only => [:index, :new, :create, :destroy]
   resources :beers
+  get 'beerlist' => 'beers#list'
   resources :breweries
 
 end

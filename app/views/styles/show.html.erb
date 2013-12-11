@@ -14,5 +14,6 @@
 </ul>
 
 
-<%= link_to 'Edit', edit_style_path(@style) if current_user %> |
-<%= link_to 'Back', styles_path %>
+<%= link_to 'Edit', edit_style_path(@style), :class => "btn btn-primary" if current_user %>
+<%= link_to 'Destroy', @style,:class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } if current_user %>
+<%= link_to 'Back', styles_path, :class => "btn btn-primary" %>

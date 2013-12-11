@@ -9,10 +9,6 @@ class BeermappingAPI
     (Rails.cache.read city)[0]
   end
 
-
-
-
-
   def self.find_place_by_id(id)
       fetch_place_by_id(id);
   end
@@ -36,7 +32,6 @@ class BeermappingAPI
     return [] if places.is_a?(Hash) and places['id'].nil?
 
     places = [places] if places.is_a?(Hash)
-    return places
     places.inject([]) do | set, place |
       set << Place.new(place)
     end

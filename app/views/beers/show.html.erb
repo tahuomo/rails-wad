@@ -34,6 +34,7 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_beer_path(@beer) if current_user %> |
-<%= link_to 'Back', beers_path %>
-<%= link_to 'list of breweries', breweries_path %>
+<%= link_to 'Edit', edit_beer_path(@beer), :class => "btn btn-primary" if current_user %>
+<%= link_to 'Destroy', @beer,:class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } if current_user%>|
+<%= link_to 'Back', beers_path, :class => "btn btn-primary" %>
+<%= link_to 'list of breweries', breweries_path, :class => "btn btn-primary" %>

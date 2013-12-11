@@ -27,9 +27,10 @@
 <% if current_user %>
     <%= form_for(@membership) do |f| %>
         <%= f.hidden_field :beer_club_id %>
-        <%= f.submit "Join! Die! Join! Die!" %>
+        <%= f.submit "Join! Die! Join! Die!",  :class => "btn btn-primary" %>
     <% end %>
 <% end %>
 
 
-<%= link_to 'Edit', edit_beer_club_path(@beer_club) if current_user %> |
+<%= link_to 'Edit', edit_beer_club_path(@beer_club), :class => "btn btn-primary" if current_user %> |
+<%= link_to 'Destroy', @beer_club, :class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } if current_user %>
