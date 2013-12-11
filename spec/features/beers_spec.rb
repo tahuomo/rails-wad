@@ -5,6 +5,7 @@ describe "Beer" do
 
   let!(:user) { FactoryGirl.create :user }
   let!(:brewery) { FactoryGirl.create :brewery, :name => "Koff" }
+  let!(:style) { FactoryGirl.create :style }
 
   before :each do
     sign_in "Pekka", "foobar1"
@@ -13,7 +14,7 @@ describe "Beer" do
   it "when created by user, will be saved to database" do
     visit new_beer_path
     fill_in('beer_name', :with => 'III')
-    select("Lager", :from => 'beer_style')
+    select(style.name, :from => 'beer_style_id')
     select(brewery.name, :from => 'beer_brewery_id')
 
 

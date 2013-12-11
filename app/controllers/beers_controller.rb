@@ -29,7 +29,7 @@ class BeersController < ApplicationController
   def new
     @beer = Beer.new
     @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = Style.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +41,7 @@ class BeersController < ApplicationController
   def edit
     @beer = Beer.find(params[:id])
     @breweries = Brewery.all
-    @styles = ["Weizen", "Lager", "Pale ale", "IPA", "Porter"]
+    @styles = Styles.all
   end
 
   # POST /beers

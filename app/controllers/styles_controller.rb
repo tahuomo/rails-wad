@@ -12,6 +12,11 @@ class StylesController < ApplicationController
 
   # GET /styles/1
   # GET /styles/1.json
+
+  before_filter :ensure_that_signed_in, :except => [:index, :show]
+  before_filter :ensure_that_admin, :only => [:destroy]
+
+
   def show
     @style = Style.find(params[:id])
 
