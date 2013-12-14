@@ -2,6 +2,11 @@ class RatingsController< ApplicationController
   before_filter :ensure_that_signed_in, :except => [:index, :show]
   def index
     @ratings = Rating.all
+    @recent_ratings = Rating.recent
+    @top_raters = User.top_raters(3)
+    @best_breweries = Brewery.top(3)
+    @best_beers = Beer.top(3)
+    @best_styles = Style.top(3)
 
     respond_to do |format|
       format.html # index.html.erb

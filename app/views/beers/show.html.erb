@@ -19,7 +19,7 @@
   <% if @beer.ratings.empty? %>
       beer has not yet been rated!
   <% else %>
-      beer has <%= pluralize(@beer.ratings.count, 'rating') %>, average: <%= @beer.average_rating %>
+      beer has <%= pluralize(@beer.ratings.count, 'rating') %>, average: <%= round(@beer.average_rating) %>
   <% end %>
 </p>
 
@@ -34,7 +34,6 @@
 <% end %>
 
 
-<%= link_to 'Edit', edit_beer_path(@beer), :class => "btn btn-primary" if current_user %>
-<%= link_to 'Destroy', @beer,:class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } if current_user%>|
+<%= edit_and_destroy_buttons(@beer) %>
 <%= link_to 'Back', beers_path, :class => "btn btn-primary" %>
 <%= link_to 'list of breweries', breweries_path, :class => "btn btn-primary" %>

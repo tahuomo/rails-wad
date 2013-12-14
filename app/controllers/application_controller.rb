@@ -21,4 +21,6 @@ class ApplicationController < ActionController::Base
   def ensure_that_admin
     redirect_to breweries_path, :notice => 'You are not an admin' unless current_user.admin?
   end
+
+
 end

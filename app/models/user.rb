@@ -46,4 +46,8 @@ class User < ActiveRecord::Base
     return hash.key(hash.values.max)
   end
 
+  def self.top_raters(n)
+    sorted_by_rating_in_desc_order = User.all.sort_by{ |u| -u.ratings.count }.first(n)
+  end
+
 end

@@ -2,9 +2,11 @@ module RatingAverage
 
 
   def average_rating
-    if ratings.empty?
-      return
+    avg = ratings.average(:score)
+    if avg.nil?
+      0
+    else
+      avg
     end
-    ratings.average("score")
   end
 end
