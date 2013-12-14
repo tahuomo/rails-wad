@@ -33,9 +33,9 @@ describe "Rating" do
 
 
     visit ratings_path
-    expect(page).to have_content "Ratings: 2"
-    expect(page).to have_content "Karhu 25"
-    expect(page).to have_content "iso 3 15"
+    expect(page).to have_content "ratings: 2"
+    expect(page).to have_content "Karhu, Koff 25"
+    expect(page).to have_content "iso 3, Koff 15"
   end
 
   it "can be seen on the owners page" do
