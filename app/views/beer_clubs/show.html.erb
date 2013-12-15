@@ -18,13 +18,22 @@
 <p>
   <b>Members:</b>
   <ul>
-    <% @beer_club.members.each do |member| %>
+    <% @beer_club.confirmed_members.each do |member| %>
        <li><%= link_to member.username, member %></li>
     <% end %>
   </ul>
+
+    <% if current_user and @beer_club.is_member?(current_user) %>
+       <b>Applicants:</b>
+       <ul>
+         <% @applications.each do |application| %>
+            <li><%= link_to application.user.username, application.user %><%= link_to "confirm", confirm_membership_path(application.id), :method => :post, :class => "btn" %></li>
+         <% end %>
+       </ul>
+    <% end %>
 </p>
 
-<% if current_user %>
+<% if current_user and not @beer_club.is_member?(current_user) %>
     <%= form_for(@membership) do |f| %>
         <%= f.hidden_field :beer_club_id %>
         <%= f.submit "Join! Die! Join! Die!",  :class => "btn btn-primary" %>

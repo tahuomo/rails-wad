@@ -23,8 +23,15 @@ Ratebeer::Application.routes.draw do
   # Muut
   resources :memberships, :only => [:new, :create]
   get 'join', to: 'memberships#new'
+  resources :memberships do
+    post 'confirm', :on => :member
+  end
 
   resources :beer_clubs
+
+
+
+
   resources :ratings, :only => [:index, :new, :create, :destroy]
   resources :beers
   get 'beerlist' => 'beers#list'

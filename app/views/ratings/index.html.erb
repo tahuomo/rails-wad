@@ -1,53 +1,55 @@
 <h2>List of ratings</h2>
 
-<p>total number of ratings: <%= @ratings.count %></p>
+<% cache "ratings_cache", :expires_in => 10.minutes do %>
+    <p>total number of ratings: <%= @ratings.count %></p>
 
-<div class="span3" >
-    <h2>top beers</h2>
-    <%= render 'toplist', :things => @best_beers %>
-</div>
+    <div class="span3" >
+        <h2>top beers</h2>
+        <%= render 'toplist', :things => @best_beers %>
+    </div>
 
-<div class="span3" >
-    <h2>top breweries</h2>
-    <%= render 'toplist', :things => @best_breweries %>
-</div>
+    <div class="span3" >
+        <h2>top breweries</h2>
+        <%= render 'toplist', :things => @best_breweries %>
+    </div>
 
-<div class="span3" >
-    <h2>top breweries</h2>
-    <%= render 'toplist', :things => @best_styles %>
-</div>
+    <div class="span3" >
+        <h2>top breweries</h2>
+        <%= render 'toplist', :things => @best_styles %>
+    </div>
 
-<p>
-    <h2>Most active users</h2>
-    <table class="table table-hover">
-      <thead>
-      <tr>
-        <th></th>
-        <th>favorite beer</th>
-        <th>favorite brewery</th>
-        <th>preferred style</th>
-        <th>ratings</th>
-      </tr>
-      </thead>
-      <%  @top_raters.each do |user| %>
+    <p>
+        <h2>Most active users</h2>
+        <table class="table table-hover">
+          <thead>
           <tr>
-            <td><%= user.username %></td>
-            <td><%= user.favorite_beer %></td>
-            <td><%= user.favorite_brewery %></td>
-            <td><%= user.favorite_style %></td>
-            <td><%= user.ratings.count %></td>
+            <th></th>
+            <th>favorite beer</th>
+            <th>favorite brewery</th>
+            <th>preferred style</th>
+            <th>ratings</th>
           </tr>
-      <% end %>
-    </table>
-</p>
+          </thead>
+          <%  @top_raters.each do |user| %>
+              <tr>
+                <td><%= user.username %></td>
+                <td><%= user.favorite_beer %></td>
+                <td><%= user.favorite_brewery %></td>
+                <td><%= user.favorite_style %></td>
+                <td><%= user.ratings.count %></td>
+              </tr>
+          <% end %>
+        </table>
+    </p>
 
 
 
-<p>
-  <h2>Recent ratings</h2>
-  <ul>
-     <% @recent_ratings.each do |rating| %>
-        <li><%= "#{rating.beer} #{rating.score} by #{rating.user}" %></li>
-     <% end %>
-  </ul>
-</p>
+    <p>
+      <h2>Recent ratings</h2>
+      <ul>
+         <% @recent_ratings.each do |rating| %>
+            <li><%= "#{rating.beer} #{rating.score} by #{rating.user}" %></li>
+         <% end %>
+      </ul>
+    </p>
+<% end %>

@@ -1,18 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
+<h2> <%= @user.username %></h2>
 
 <p>
   <%= @user.username %> has done <%=  pluralize(@user.ratings.count, 'rating') %>
   <% if not @user.ratings.empty? %>
-      , with average of <%= @user.average_rating %>
-  <% end %>
-</p>
-
-<% if not @user.ratings.empty? %>
+      , with average of <%= @user.average_rating %> <br />
+      <br />
+      <b>favorite beer </b><%= "#{@user.favorite_beer}"%> <br />
+      <b>preferred style </b><%= "#{@user.favorite_style}"%> <br />
+      <b>favorite brewery </b><%= "#{@user.favorite_brewery}"%> <br />
     <ul>
       <% @user.ratings.each do |rating| %>
           <li>
@@ -23,21 +20,29 @@
           </li>
       <% end %>
     </ul>
-    <p>favorite brewery is <%= @user.favorite_brewery.name %><br />
-    favorite style is <%= @user.favorite_style %></p>
 <% end %>
+</p>
 
 <% if not @user.memberships.empty? %>
-<p>belongs to
-      <% @user.memberships.each do |m| %>
-            <%=link_to m.beer_club.name, m.beer_club %>
-      <% end %>
-</p>
+    <h2>Beer clubs</h2>
+    <p>belongs to
+          <ul>
+          <% @user.memberships.confirmed.each do |m| %>
+               <li><%=link_to m.beer_club.name, m.beer_club %>  </li>
+          <% end %>
+          </ul>
+    </p>
+    <p>applied to
+        <ul>
+          <% @user.memberships.unconfirmed.each do |m| %>
+              <li><%=link_to m.beer_club.name, m.beer_club %></li>
+          <% end %>
+        </ul>
+    </p>
 <% end %>
 
 
 <% if currently_signed_in?(@user) %>
 <%= link_to 'Edit', edit_user_path(@user), :class => "btn btn-primary" %>
-<%= link_to 'Destroy', @user,:class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Delete account', @user,:class => 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
 <% end %>
-<%= link_to 'Back', users_path, :class => "btn btn-primary" %>

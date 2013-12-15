@@ -9,10 +9,10 @@ class User < ActiveRecord::Base
   validates_length_of :password, :minimum => 4
   validates_format_of :password, :with => /[^A-Za-z]/i, :message => "Must contain non-alphabetic characters"
 
-  has_many :ratings, :dependent => :destroy
+  has_many :ratings, :dependent => :destroy, :include => [ :beer => [:brewery, :style ] ]
   has_many :beers, :through => :ratings
-  has_many :memberships
-  has_many :beer_clubs, :through => :memberships
+  has_many :memberships, :include => [:beer_club]
+  has_many :beer_clubs, :through => :memberships, :include => [ :beer ]
 
 
   def to_s

@@ -1,6 +1,8 @@
 class RatingsController< ApplicationController
   before_filter :ensure_that_signed_in, :except => [:index, :show]
   def index
+    return if fragment_exist? 'ratings_cache'
+
     @ratings = Rating.all
     @recent_ratings = Rating.recent
     @top_raters = User.top_raters(3)

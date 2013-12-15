@@ -21,4 +21,11 @@ class MembershipsController  < ApplicationController
 
             redirect_to current_user
           end
+
+          def confirm
+            membership = Membership.find(params[:id])
+            membership.update_attribute :confirmed, true
+
+            redirect_to :back, :notice => "#{membership.user.username} has been accepted as a member"
+          end
 end

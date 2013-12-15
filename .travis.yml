@@ -15,11 +15,6 @@ deploy:
     repo: tahuomo/rails-wad
   run: "rake db:migrate"
 
-
-addons:
-  sauce_connect:
-    username: "tahuomo"
-    access_key:
-      secure: "jc/ury6WI11JU0qF+UF30V9ffzrRlMyRfEVLtKuDOXL06bUXPLE5d7nboL5YZ4C0BX5eQkUmdwNh9S1WOEi3NkBPnR2taNYjX7a/9q8co3+c2qVBixKEIjnVIlmm1KFtjZ63tbm/yeb8G7m9OANMJtYR3/EMRS+lL9Pkl7VzAXk="
-
-
+before_install:
+  - "export DISPLAY=:99.0"
+  - "sh -e /etc/init.d/xvfb start"

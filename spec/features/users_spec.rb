@@ -46,8 +46,8 @@ describe "User" do
     visit user_path(@user)
 
 
-    expect(page).to have_content 'favorite brewery is anonymous'
-    expect(page).to have_content 'favorite style is Lager'
+    expect(page).to have_content 'favorite brewery anonymous'
+    expect(page).to have_content 'preferred style Lager'
   end
 
 end
