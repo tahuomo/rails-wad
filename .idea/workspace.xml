@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56094cec-bd1e-432f-acad-ab95213adb46" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20131211144542_move_to_new_column.rb" afterPath="$PROJECT_DIR$/db/migrate/20131211144542_move_to_new_column.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20131211144929_create_new_style_column.rb" afterPath="$PROJECT_DIR$/db/migrate/20131211144929_create_new_style_column.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/migrate/20131211150420_delete_old_style.rb" afterPath="$PROJECT_DIR$/db/migrate/20131211150420_delete_old_style.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/beer_club.rb" afterPath="$PROJECT_DIR$/app/models/beer_club.rb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/memberships/new.html.erb" afterPath="$PROJECT_DIR$/app/views/memberships/new.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/rating.rb" afterPath="$PROJECT_DIR$/app/models/rating.rb" />
     </list>
     <ignored path="ratebeer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -18,7 +16,7 @@
     <file path="/show.html.erb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387125545415" ignored="false" />
     <file path="/panimot.html.erb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1383841722430" ignored="false" />
     <file path="/temp.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1386090082229" ignored="false" />
-    <file path="/rating.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1386871489948" ignored="false" />
+    <file path="/rating.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387134810552" ignored="false" />
     <file path="/ratings_controller.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387129216580" ignored="false" />
     <file path="/Gemfile" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1383923858163" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p448/gems/activesupport-3.2.14/lib/active_support/descendants_tracker.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1383925912553" ignored="false" />
@@ -27,15 +25,15 @@
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p448/gems/activemodel-3.2.14/lib/active_model/validations.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1383925912553" ignored="false" />
     <file path="$USER_HOME$/.rvm/gems/ruby-1.9.3-p448/gems/rack-1.4.5/lib/rack/utils.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1383925912553" ignored="false" />
     <file path="/application.html.erb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1386792781357" ignored="false" />
-    <file path="/new.html.erb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1385322883370" ignored="false" />
+    <file path="/new.html.erb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387134873064" ignored="false" />
     <file path="/beers_controller.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387126623710" ignored="false" />
     <file path="/_form.html.erb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1386774751493" ignored="false" />
     <file path="/routes.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387123260910" ignored="false" />
     <file path="/rating_average.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1386869977614" ignored="false" />
     <file path="/application.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1385124163279" ignored="false" />
     <file path="/user.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387124969483" ignored="false" />
-    <file path="/beer_club.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387123098028" ignored="false" />
-    <file path="/membership.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387121682661" ignored="false" />
+    <file path="/beer_club.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387134980507" ignored="false" />
+    <file path="/membership.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387134841072" ignored="false" />
     <file path="/memberships_controller.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387121248198" ignored="false" />
     <file path="/users_controller.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1387125093063" ignored="false" />
     <file path="/20131124194936_add_password_digest_to_user.rb" changelist="56094cec-bd1e-432f-acad-ab95213adb46" time="1385322599346" ignored="false" />
@@ -88,8 +86,26 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="20131123112855_create_memberships.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131123112855_create_memberships.rb">
+      <file leaf-file-name="rating.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/rating.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="42" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="membership.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/membership.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="55" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="place.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/place.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -97,8 +113,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20131124194936_add_password_digest_to_user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131124194936_add_password_digest_to_user.rb">
+      <file leaf-file-name="new.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/memberships/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="4" column="10" selection-start="141" selection-end="141" vertical-scroll-proportion="-2.5">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="settings.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/settings.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -106,8 +131,8 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20131207130253_add_admin_boolean_to_user.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131207130253_add_admin_boolean_to_user.rb">
+      <file leaf-file-name="style.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/style.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
@@ -115,64 +140,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20131209180537_create_settings.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131209180537_create_settings.rb">
+      <file leaf-file-name="user.rb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/user.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="24" column="93" selection-start="838" selection-end="838" vertical-scroll-proportion="0.4556962">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beer.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/beer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="29" selection-start="108" selection-end="135" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="beer_club.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/beer_club.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="19" column="27" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="brewery.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/brewery.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20131211143451_create_styles.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131211143451_create_styles.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20131211144542_move_to_new_column.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131211144542_move_to_new_column.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="20" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20131211144929_create_new_style_column.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131211144929_create_new_style_column.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="17" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20131212165912_add_activity_to_brewery.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131212165912_add_activity_to_brewery.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20131215150458_add_confirmed_to_membership.rb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131215150458_add_confirmed_to_membership.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="20131215162034_add_user_index_based_on_username.rb" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20131215162034_add_user_index_based_on_username.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="24" selection-start="115" selection-end="115" vertical-scroll-proportion="0.10135135">
               <folding />
             </state>
           </provider>
@@ -196,10 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/db/development_copy/development.sqlite3" />
-        <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/app/views/beers/index.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/beers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/breweries_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/breweries/index.html.erb" />
@@ -212,6 +206,10 @@
         <option value="$PROJECT_DIR$/db/migrate/20131211144929_create_new_style_column.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131211150420_delete_old_style.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20131211144542_move_to_new_column.rb" />
+        <option value="$PROJECT_DIR$/app/models/rating.rb" />
+        <option value="$PROJECT_DIR$/app/models/membership.rb" />
+        <option value="$PROJECT_DIR$/app/views/memberships/new.html.erb" />
+        <option value="$PROJECT_DIR$/app/models/beer_club.rb" />
       </list>
     </option>
   </component>
@@ -327,6 +325,108 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="migrate" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratings" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="memberships" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="breweries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ratebeer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="models" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -775,114 +875,114 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131107155307_create_beers.rb">
+    <entry file="file://$PROJECT_DIR$/db/seeds_old.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="87" selection-start="796" selection-end="796" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/breweries_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131211150420_delete_old_style.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/breweries/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="20" selection-start="80" selection-end="80" vertical-scroll-proportion="0.0">
+        <state line="17" column="61" selection-start="464" selection-end="464" vertical-scroll-proportion="-10.625">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131108135258_create_ratings.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/ratings/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131122124701_create_users.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/beers_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131122131503_add_ratings_foreign_key_to_user.rb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/memberships_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131123112135_create_beer_clubs.rb">
+    <entry file="file://$PROJECT_DIR$/app/views/memberships/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="10" selection-start="141" selection-end="141" vertical-scroll-proportion="-2.5">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/beer_club.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="19" column="27" selection-start="400" selection-end="400" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/beer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="29" selection-start="108" selection-end="135" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/brewery.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131123112855_create_memberships.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/membership.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="55" selection-start="238" selection-end="238" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/place.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131124194936_add_password_digest_to_user.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/rating.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="42" selection-start="481" selection-end="481" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/settings.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131207130253_add_admin_boolean_to_user.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/style.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131209180537_create_settings.rb">
+    <entry file="file://$PROJECT_DIR$/app/models/user.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131211143451_create_styles.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131211144542_move_to_new_column.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="20" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131211144929_create_new_style_column.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="17" selection-start="83" selection-end="83" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131212165912_add_activity_to_brewery.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131215150458_add_confirmed_to_membership.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20131215162034_add_user_index_based_on_username.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="24" selection-start="115" selection-end="115" vertical-scroll-proportion="0.10135135">
+        <state line="24" column="93" selection-start="838" selection-end="838" vertical-scroll-proportion="0.4556962">
           <folding />
         </state>
       </provider>
