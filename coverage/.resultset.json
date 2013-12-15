@@ -204,6 +204,8 @@
         107,
         72,
         null,
+        0,
+        null,
         null,
         1,
         20,
@@ -355,6 +357,8 @@
       ],
       "/home/saasbook/beerbeer/ratebeer/app/models/beer_club.rb": [
         1,
+        1,
+        null,
         1,
         null,
         1,
@@ -637,7 +641,7 @@
         1,
         null,
         1,
-        48,
+        50,
         0,
         null,
         null,
@@ -795,6 +799,7 @@
         1,
         1,
         null,
+        1,
         1,
         null,
         null,
@@ -1106,8 +1111,10 @@
         null,
         1,
         1,
+        1,
         null,
         null,
+        1,
         1,
         1,
         null,
@@ -1699,6 +1706,6 @@
         null
       ]
     },
-    "timestamp": 1387130861
+    "timestamp": 1387135732
   }
 }
