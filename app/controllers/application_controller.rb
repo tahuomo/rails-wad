@@ -7,7 +7,9 @@ class ApplicationController < ActionController::Base
 
   def current_user
     return nil if session[:user_id].nil?
-    User.find(session[:user_id])
+    return User.find(session[:user_id])
+    rescue ActiveRecord::RecordNotFound => e
+    return  nil
   end
 
   def currently_signed_in?(user)
